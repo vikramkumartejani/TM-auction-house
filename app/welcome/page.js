@@ -24,14 +24,14 @@ export default function Welcome() {
           <div className="pb-[152px] max-w-[555px] w-full mx-auto text-center mt-10 px-4">
             <h1 className="text-white text-[64px] font-medium leading-[70px]">Welcome to TM</h1>
 
-            <p className="text-white/80 text-[23px] leading-[32px] font-light px-5">
+            <p className="text-white/80 text-[23px] leading-[32px] font-centraRegular px-5">
               We can check details of your watch and verify if it’s registered
               stolen
             </p>
 
             {/* Submit Button */}
-            <Link href='/payments'>
-              <button className="w-full bg-[#8BDB00] text-[#010A0B] font-medium text-[20px] leading-[22px] h-[56px] rounded-xl pt-1.5 mt-[42px]">
+            <Link href='/home-page'>
+              <button   style={{ background: "linear-gradient(237.24deg, #87603F 15.61%, #FFF3CF 114.56%)" }} className="w-full text-white font-medium text-[20px] leading-[22px] h-[56px] rounded-[171px] pt-1.5 mt-[42px]">
                 Start Verification
               </button>
             </Link>

@@ -14,12 +14,12 @@ export default function LoginForm() {
           <h1 className="text-white leading-[50.4px] text-[36px] font-medium text-center">
             Log In
           </h1>
-          <p className="mt-3  text-sm text-center text-gradient">
+          <p className="mt-3 text-sm font-centraRegular text-center text-gradient">
             Please select your country and enter mobile number
           </p>
 
           <div className="mt-[55px]">
-            <h4 className="text-[#FFFFFF] text-[18px] font-normal leading-[22px]">Phone number</h4>
+            <h4 className="text-[#FFFFFF] text-[18px] font-centraRegular font-normal leading-[22px]">Phone number</h4>
             <div className="my-4 w-full bg-white rounded-xl h-[64px] flex items-center ">
               <div className="min-w-[94px] flex items-center justify-center gap-2 h-full rounded-l-xl px-4 border-r border-[#EBEBEB]">
                 <Image src='/icons/number-flag.svg' alt="number" width={32} height={21} />
@@ -28,11 +28,11 @@ export default function LoginForm() {
               <input type="text" placeholder="+1 (111)-111-1111" className="pt-[6px] leading-normal w-full outline-none border-none px-8 placeholder:text-[#0B0A0A99] text-[18px] font-normal text-[#0B0A0A]" />
             </div>
 
-            <p className="text-[#FFFFFFB2] text-[17px] font-normal leading-[25.5px]">
+            <p className="text-[#FFFFFFB2] text-[17px] font-normal font-centraRegular leading-[25.5px]">
               Requires country code, we will send you a verification code via SMS
             </p>
 
-            <Link href='/verification' style={{background:"linear-gradient(237.24deg, #87603F 15.61%, #FFF3CF 114.56%)"}} className="mt-8 w-full text-white pt-1 font-medium h-[64px] flex items-center justify-center rounded-[171px] text-[20px] leading-[22px]">
+            <Link href='/verification' style={{ background: "linear-gradient(237.24deg, #87603F 15.61%, #FFF3CF 114.56%)" }} className="mt-8 w-full text-white pt-1 font-medium h-[64px] flex items-center justify-center rounded-[171px] text-[20px] leading-[22px]">
               Send SMS
             </Link>
 
@@ -42,12 +42,13 @@ export default function LoginForm() {
               <div className="flex-1 h-px bg-[#FFFFFF1A]"></div>
             </div>
 
-            <button className="mt-6 flex items-center pt-1.5 justify-center gap-2 w-full bg-white border border-[#E7E7E7] text-[#10100E] text-[16px] leading-[24px] font-medium h-[64px] rounded-[232px]">
-              <Image src='/icons/google.svg' alt="google" width={32} height={32} className="-mt-1.5" />Continue with Google
+            <button className="mt-6 flex items-center justify-center gap-2 w-full pt-2 bg-white border border-[#E7E7E7] text-[#10100E] text-[16px] leading-[24px] font-medium h-[64px] rounded-[232px]">
+              <Image src='/icons/google.svg' alt="google" width={32} height={32} /> Continue with Google
             </button>
           </div>
         </div>
       </div>
     </div>
+
   );
 }

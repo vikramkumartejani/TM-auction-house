@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import { useRouter } from 'next/navigation';
 import Navbar from "../components/navbar";
+import Link from "next/link";
 
 export default function VerificationPage() {
   const [code, setCode] = useState(["", "", "", ""]);
@@ -63,9 +64,10 @@ export default function VerificationPage() {
         <div className="w-full max-w-[522px]">
           <div className="text-center">
             <h1 className="text-white text-[36px] leading-[50.4px] font-medium">Verify it's you</h1>
-            <p className="text-[#FFFFFF8F] text-[17px] leading-[25.5px] font-extralight">
+            <p className="text-[#FFFFFF8F] text-[17px] leading-[25.5px] font-centraRegular">
               Enter the verification code we just sent you at
               <span className="text-gradient"> +1 (111)-111-1111.</span>
+              <Link href='/verification' className="text-[#79A09F]"> Edit</Link>
             </p>
 
             {/* Verification Code Inputs */}
@@ -92,8 +94,8 @@ export default function VerificationPage() {
 
             {/* Submit Button */}
             <button
-            style={{background:"linear-gradient(237.24deg, #87603F 15.61%, #FFF3CF 114.56%)"}}
-              className="w-full pt-1.5 h-[64px] rounded-xl text-[#0B0A0A] text-[20px] leading-[22px] font-medium"
+              style={{ background: "linear-gradient(237.24deg, #87603F 15.61%, #FFF3CF 114.56%)" }}
+              className="w-full pt-1.5 h-[64px] rounded-[171px] text-white text-[20px] leading-[22px] font-medium"
               onClick={handleSubmit}
             >
               Submit

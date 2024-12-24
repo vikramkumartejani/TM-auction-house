@@ -1,45 +1,56 @@
+"use client"
 import Image from "next/image";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 export default function Sidebar() {
+  const pathname = usePathname();
+
   const navItemsUpper = [
-    { icon: "home", href: "/", label: "Home", active: true },
-    { icon: "search", href: "/search", label: "Search" },
-    { icon: "file", href: "/documents", label: "Documents" },
-    { icon: "dollar", href: "/payments", label: "Payments" },
-    { icon: "scan", href: "/users", label: "Users", largeIcon: true },
+    {
+      icon: "/sidebar-icons/home-non-active.svg",
+      activeIcon: "/sidebar-icons/home-active.svg",
+      href: "/home-page",
+      label: "Home",
+    },
+
   ];
+
   const navItemsLower = [
-    { icon: "diamond", href: "/premium", label: "Premium" },
-    { icon: "info", href: "/help", label: "Help" },
-    { icon: "bell-02", href: "/bell", label: "Bell" },
-    { icon: "profile", href: "/profile", label: "Profile", largeIcon: true },
+    {
+      icon: "/sidebar-icons/how-it-work-non-active.svg",
+      activeIcon: "/sidebar-icons/how-it-work-active.svg",
+      href: "/how-its-work",
+      label: "Help",
+    },
   ];
 
   return (
-    <div className="fixed left-0 top-0 z-50 h-screen min-w-[86px] bg-[#0B3434] flex flex-col items-center py-4 overflow-y-auto">
+    <div className="min-h-screen bg-[#093033] py-8 w-[86px]">
       {/* Logo */}
-      <Link href="/" className="mb-8">
-        <img src="/icons/logo-icon.svg" alt="Logo" className="rounded-full " />
+      <Link href="/" className="mb-8 flex w-full items-center justify-center">
+        <Image
+          src="/icons/logo-icon.svg"
+          alt="Logo"
+          width={50}
+          height={50}
+          className="rounded-full"
+        />
       </Link>
 
       {/* Navigation */}
-      <nav className="flex-1 w-full">
+      <h2 className="mt-14 text-center text-white text-[14px] font-medium leading-[17.5px]">Menu</h2>
+      <nav className="mt-3 flex-1 w-full">
         <ul className="flex flex-col items-center gap-1">
           {navItemsUpper.map((item) => (
             <li key={item.label} className="w-full">
-              <Link
-                href={item.href}
-                className={`flex justify-center p-3 text-gray-400 hover:text-white transition-colors ${
-                  item.active ? "text-white bg-[#0F4141]" : ""
-                }`}
-              >
-                <img
-                  className={`w-5 h-5 ${item.largeIcon ? "w-7 h-7" : ""}`}
-                  src={`/icons/${item.icon}.svg`}
+              <Link href={item.href} className="flex justify-center p-3">
+                <Image
+                  src={pathname === item.href ? item.activeIcon : item.icon}
                   alt={item.label}
+                  width={50}
+                  height={50}
                 />
-                <span className="sr-only">{item.label}</span>
               </Link>
             </li>
           ))}
@@ -47,27 +58,23 @@ export default function Sidebar() {
       </nav>
 
       {/* Bottom Icons */}
-      <div className="mt-auto flex flex-col items-center gap-4">
+      <div className="mt-[254px] flex flex-col items-center gap-4">
         <ul className="flex flex-col items-center gap-4">
           {navItemsLower.map((item) => (
             <li key={item.label} className="w-full">
-              <Link
-                href={item.href}
-                className={`flex justify-center p-1 text-gray-400 hover:text-white transition-colors ${
-                  item.active ? "text-white bg-[#0F4141]" : ""
-                }`}
-              >
-                <img
-                  className={`w-5 h-5 ${item.largeIcon ? "w-7 h-7" : ""}`}
-                  src={`/icons/${item.icon}.svg`}
+              <Link href={item.href} className="flex justify-center">
+                <Image
+                  src={pathname === item.href ? item.activeIcon : item.icon}
                   alt={item.label}
+                  width={pathname === item.href ? 50 : 24}
+                  height={pathname === item.href ? 50 : 24}
                 />
-                <span className="sr-only">{item.label}</span>
               </Link>
             </li>
           ))}
         </ul>
       </div>
+
     </div>
   );
 }

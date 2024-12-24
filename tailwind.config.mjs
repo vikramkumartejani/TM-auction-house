@@ -9,6 +9,7 @@ export default {
     extend: {
       fontFamily: {
         centraNo2: ['CentraNo2', 'sans-serif'], 
+        "centraRegular": ['CentraNo2-Regular', 'sans-serif'], 
       },
     },
   },
