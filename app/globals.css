@@ -1,0 +1,32 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "CentraNo2";
+  src: url("/font/CentraNo2-Medium.ttf") format("truetype");
+  font-weight: 500; 
+}
+
+@font-face {
+  font-family: "CentraNo2-Regular";
+  src: url("/font/CentraNo2-Book.ttf") format("truetype");
+  font-weight: 400;
+}
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "CentraNo2", sans-serif;
+}
+
+.text-gradient {
+  background: linear-gradient(237.24deg, #87603f 15.61%, #fff3cf 114.56%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
