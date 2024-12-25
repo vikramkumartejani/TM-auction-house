@@ -7,7 +7,7 @@ import Link from "next/link";
 
 export default function LoginForm() {
   return (
-    <div className="min-h-screen bg-[#0B3434] px-4">
+    <div className="min-h-screen bg-[#0B3434]">
       <Navbar />
       <div className="w-full max-w-[522px] mx-auto py-[50px]">
         <div className="">
