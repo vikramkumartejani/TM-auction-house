@@ -80,6 +80,8 @@ export default function Sidebar() {
 
         {/* Bottom Icons */}
         <div className="mt-[254px] flex flex-col items-center gap-4">
+            <Link href='/notification' className="mb-8"><Image src='/assets/whatsapp.svg' alt="profile-sidebar" width={50} height={50} /></Link>
+            <Link href='/notification' className="mb-8"><Image src='/sidebar-icons/diamond.svg' alt="profile-sidebar" width={24} height={24} /></Link>
           <ul className="flex flex-col items-center gap-4">
             {navItemsLower.map((item) => (
               <li key={item.label} className="w-full">
@@ -94,6 +96,8 @@ export default function Sidebar() {
               </li>
             ))}
           </ul>
+          <Link href='/notification' className="mt-8"><Image src='/sidebar-icons/bell.svg' alt="profile-sidebar" width={28} height={28} /></Link>
+          <Link href='/profile' className="mt-8"><Image src='/sidebar-icons/profile-sidebar.svg' alt="profile-sidebar" width={50} height={50} /></Link>
         </div>
       </div>
     </div>
