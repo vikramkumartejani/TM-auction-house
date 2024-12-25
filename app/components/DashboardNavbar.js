@@ -95,8 +95,8 @@ const DashboardNavbar = () => {
                                 <div className="flex flex-col gap-4 pt-4">
                                     {navItemsLower.map((item, index) => (
                                         <a
-                                        href={item.href}
-                                        key={index}
+                                            href={item.href}
+                                            key={index}
                                             className="flex items-center gap-3 p-2"
                                         >
                                             <Image src={item.icon} alt={item.label} width={24} height={24} />
@@ -104,9 +104,9 @@ const DashboardNavbar = () => {
                                         </a>
                                     ))}
                                 </div>
-                                    <Link href='/notification' className="pl-2 my-8"><Image src='/sidebar-icons/diamond.svg' alt="profile-sidebar" width={24} height={24} /></Link>
+                                <Link href='/notification' className="pl-2 my-8"><Image src='/sidebar-icons/diamond.svg' alt="profile-sidebar" width={24} height={24} /></Link>
                                 <Link href='/notification' className="pl-2"><Image src='/sidebar-icons/bell.svg' alt="profile-sidebar" width={28} height={28} /></Link>
-                                        <Link href='/notification' className="pl-2 mt-8"><Image src='/assets/whatsapp.svg' alt="profile-sidebar" width={50} height={50} /></Link>
+                                <Link href='/notification' className="pl-2 mt-8"><Image src='/assets/whatsapp.svg' alt="profile-sidebar" width={50} height={50} /></Link>
                                 <Link href='/profile' className="pl-2 mt-8"><Image src='/sidebar-icons/profile-sidebar.svg' alt="profile-sidebar" width={50} height={50} /></Link>
                             </div>
                         </div>
