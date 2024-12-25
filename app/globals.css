@@ -134,7 +134,7 @@ body {
 }
 
 .scrollbar-container::-webkit-scrollbar-thumb {
-  background-color: #1ABC9C; /* Scrollbar color */
+  background-color: #1abc9c; /* Scrollbar color */
   border-radius: 4px; /* Optional: Rounded corners */
   border: 2px solid #093033; /* Creates space around thumb */
 }
@@ -149,8 +149,8 @@ body {
   scrollbar-color: white #093033; /* Thumb color and track color */
 }
 
-
 @media screen and (max-width: 410px) {
   .explore-watch-grid {
     grid-template-columns: 1fr !important;
   }
+}
