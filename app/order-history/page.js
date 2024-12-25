@@ -200,7 +200,7 @@ export default function BidHistory() {
                 <select
                   value={shipmentFilter}
                   onChange={(e) => setShipmentFilter(e.target.value)}
-                  className="appearance-none px-4 min-w-40 py-2 flex items-center gap-2 bg-[#0B4447] text-white rounded-full text-sm font-medium hover:bg-[#0B4447]/80 transition-colors focus:outline-none focus:ring-2 focus:ring-[#FFE9C2]"
+                  className="appearance-none px-4 min-w- py-2 flex items-center gap-2 bg-[#0B4447] text-white rounded-full text-sm font-medium hover:bg-[#0B4447]/80 transition-colors focus:outline-none focus:ring-2 focus:ring-[#FFE9C2]"
                 >
                   <option value="" disabled>
                     Shipment Status
