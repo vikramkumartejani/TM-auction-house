@@ -200,7 +200,7 @@ export default function ExploreWatches() {
           <div className="sm:hidden flex flex-col min-w-[123px]">
             <button
               onClick={() => setDropdownOpen(!dropdownOpen)}
-              className="flex justify-between items-center pb-[12px] pt-[11px] px-[20px] bg-[#FFE9C2]  text-[14px] text-[#0B0A0A] rounded-full"
+              className="flex justify-between items-center sm:pb-[12px] pb-[6px] sm:pt-[11px] pt-[4px] px-[20px] bg-[#FFE9C2]  text-[14px] text-[#0B0A0A] rounded-full"
             >
               <span className="pt-[7px]">{activeTab}</span>
               <FaChevronDown
@@ -238,12 +238,12 @@ export default function ExploreWatches() {
           <div className="relative flex-1 max-w-[356px] w-full">
             <FiSearch
               size={24}
-              className="absolute md:left-4 left-[14px] top-1/2 transform -translate-y-1/2 text-gray-400"
+              className="absolute md:left-4 left-[14px] top-1/2 transform -translate-y-1/2 text-gray-400 sm:w-[24px] w-[20px]"
             />
             <input
               type="text"
               placeholder="Search watch..."
-              className="w-full bg-[#1a1d1c] h-full rounded-full px-[14px] md:pb-[13px] pb-[5px]  md:pt-[16px] pt-[8px] font-centraRegular pl-12 text-white placeholder-[#FFFFFFB2] placeholder:text-[14px] focus:outline-none"
+              className="w-full bg-[#1a1d1c] h-full rounded-full px-[14px] md:pb-[13px] pb-[8px]  md:pt-[16px] pt-[11px] font-centraRegular pl-12 text-white placeholder-[#FFFFFFB2] placeholder:text-[14px] focus:outline-none"
             />
           </div>
           <div className="md:min-w-[50px] min-w-[38px] md:w-[50px] w-[38px] md:h-[50px] h-[38px] rounded-full bg-[#093033] flex items-center justify-center">
