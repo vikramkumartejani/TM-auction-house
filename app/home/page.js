@@ -111,7 +111,7 @@ export default function Dashboard() {
                       </div>
                     </div>
                   </div>
-                  <diV className="xl:hidden flex gap-[8px] ">
+                  <div className="xl:hidden flex gap-[8px] ">
                     <div className="max-w-[300px] w-[300px]">
                       <KOTHWhite
                         title="King of the Hills"
@@ -119,7 +119,7 @@ export default function Dashboard() {
                         viewAllProp="View all"
                       />
                     </div>
-                  </diV>
+                  </div>
                 </div>
 
                 <div className="col-span-12">
