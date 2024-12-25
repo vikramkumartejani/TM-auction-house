@@ -25,7 +25,6 @@ export default function Sidebar() {
       href: "/blog",
       label: "Blog",
     },
-
   ];
 
   const navItemsLower = [
