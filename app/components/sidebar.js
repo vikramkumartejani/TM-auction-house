@@ -45,7 +45,7 @@ export default function Sidebar() {
   return (
     <div className="md:block hidden">
       <div className="h-screen flex py-8 min-w-[86px] w-[86px]"></div>
-      <div className="fixed overflow-y-auto top-0 left-0 h-screen bg-[#093033] py-8 w-[86px] z-[999] custom-scrollbar">
+      <div className="fixed overflow-y-auto top-0 left-0 h-screen bg-[#093033] py-8 w-[86px] z-40 custom-scrollbar">
         {/* Logo */}
         <Link href="/" className="mb-8 flex w-full items-center justify-center">
           <Image
@@ -80,8 +80,8 @@ export default function Sidebar() {
 
         {/* Bottom Icons */}
         <div className="mt-[254px] flex flex-col items-center gap-4">
-            <Link href='/notification' className="mb-8"><Image src='/assets/whatsapp.svg' alt="profile-sidebar" width={50} height={50} /></Link>
-            <Link href='/notification' className="mb-8"><Image src='/sidebar-icons/diamond.svg' alt="profile-sidebar" width={24} height={24} /></Link>
+          <Link href='/notification' className="mb-8"><Image src='/assets/whatsapp.svg' alt="profile-sidebar" width={50} height={50} /></Link>
+          <Link href='/notification' className="mb-8"><Image src='/sidebar-icons/diamond.svg' alt="profile-sidebar" width={24} height={24} /></Link>
           <ul className="flex flex-col items-center gap-4">
             {navItemsLower.map((item) => (
               <li key={item.label} className="w-full">
