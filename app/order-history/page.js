@@ -150,7 +150,7 @@ export default function BidHistory() {
               />
             </div>
 
-            <div className="flex gap-2">
+            <div className="flex gap-2 flex-wrap">
               {/* Payment Status Dropdown */}
               <div className="relative">
                 <select
@@ -221,7 +221,7 @@ export default function BidHistory() {
 
           {/* Table */}
           <div className="rounded-lg overflow-hidden">
-            <table className="w-full">
+            <table className="w-full overflow-x-auto">
               <thead>
                 <tr>
                   <th className="text-left p-4 text-[#1b787d] font-medium">

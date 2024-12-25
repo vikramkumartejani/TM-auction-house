@@ -62,13 +62,13 @@ const DashboardNavbar = () => {
                     <>
                         {/* Backdrop */}
                         <div
-                            className="fixed inset-0 bg-black bg-opacity-50 !z-50"
+                            className="fixed inset-0 bg-black bg-opacity-50 z-[999]"
                             onClick={closeSidebar}
                         ></div>
 
                         {/* Sidebar */}
                         <div
-                            className={`fixed top-0 left-0 h-full w-64 bg-[#093033] shadow-lg transform transition-transform z-50 ${isSidebarOpen ? "translate-x-0" : "-translate-x-full"
+                            className={`fixed top-0 left-0 z-[999] h-full w-64 bg-[#093033] shadow-lg transform transition-transform z-50 ${isSidebarOpen ? "translate-x-0" : "-translate-x-full"
                                 }`}
                         >
                             <div className="flex flex-col h-full p-4">
