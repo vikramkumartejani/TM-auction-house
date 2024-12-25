@@ -55,26 +55,50 @@ body {
   background: linear-gradient(180deg, #061b1c 0%, #030a0a 100%);
 }
 
-/* Custom scrollbar styles */
-.custom-scrollbar {
-  scrollbar-width: thin; /* For Firefox */
-  scrollbar-color: #cbad7e #091618; /* Thumb and track colors */
-  border-radius: 8px !important; /* Rounded corners for thumb */
+/* Toggle */
+.switch {
+  font-size: 17px;
+  position: relative;
+  display: inline-block;
+  min-width: 44px;
+  min-height: 24px;
 }
 
-.custom-scrollbar::-webkit-scrollbar {
-  width: 8px; /* Scrollbar width */
-  height: 8px; /* Scrollbar height (for horizontal scrollbars) */
-  border-radius: 8px !important; /* Rounded corners for thumb */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
 }
 
-.custom-scrollbar::-webkit-scrollbar-thumb {
-  background-color: #cbad7e; /* Scrollbar thumb color */
-  border-radius: 8px !important; /* Rounded corners for thumb */
-  border: 2px solid #091618; /* Optional border around the thumb */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #79a09f;
+  transition: 0.4s;
+  border-radius: 10000px;
 }
 
-.custom-scrollbar::-webkit-scrollbar-track {
-  background-color: #091618; /* Scrollbar track color */
-  border-radius: 8px !important; /* Rounded corners for track */
+.slider:before {
+  position: absolute;
+  content: "";
+  min-height: 20px;
+  min-width: 20px;
+  border-radius: 1000px;
+  left: 3;
+  bottom: 3px;
+  transform: rotate(270deg);
+  background-color: white;
+  transition: 0.4s;
+}
+
+.switch input:checked + .slider {
+  background-color: #8bdb00;
+}
+
+.switch input:checked + .slider:before {
+  transform: translateX(1.1em);
 }
