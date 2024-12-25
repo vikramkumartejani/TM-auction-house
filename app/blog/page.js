@@ -4,6 +4,8 @@ import DashboardLayout from '../components/DashboardLayout'
 import Image from 'next/image';
 import LatestNews from './LatestNews';
 import Link from 'next/link';
+import DashboardNavbar from '../components/DashboardNavbar';
+import BottomBar from '../components/BottomBar';
 
 const page = () => {
     const [activeTab, setActiveTab] = useState('All Articles');
@@ -13,6 +15,9 @@ const page = () => {
     };
     return (
         <DashboardLayout>
+            <div className=''>
+                <DashboardNavbar/>
+            </div>
             <div className=''>
                 <div>
                     <h1 className='text-white text-[32px]'>Watch Auction Blog</h1>
@@ -70,6 +75,9 @@ const page = () => {
                 </div>
 
                 <LatestNews />
+            </div>
+            <div>
+                <BottomBar/>
             </div>
         </DashboardLayout>
     )

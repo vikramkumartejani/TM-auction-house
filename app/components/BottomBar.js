@@ -10,7 +10,7 @@ const BottomBar = () => {
         {
             icon: "/sidebar-icons/home-non-active.svg",
             activeIcon: "/sidebar-icons/home-active.svg",
-            href: "/home-page",
+            href: "/home",
             label: "Home",
         },
         {

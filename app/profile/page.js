@@ -6,6 +6,7 @@ import Products from './Products'
 import Notification from './Notification'
 import YourComments from './YourComments'
 import ProfileModal from './ProfileModal'
+import DashboardNavbar from '../components/DashboardNavbar'
 
 const page = () => {
   const [activeTab, setActiveTab] = useState('Winning Bid');
@@ -21,6 +22,9 @@ const page = () => {
 
   return (
     <DashboardLayout>
+      <div className='md:hidden block'>
+        <DashboardNavbar/>
+      </div>
       <div className='overflow-hidden w-full flex items-start lg:flex-row flex-col gap-6'>
         <div className='w-full max-w-[904px]'>
           <div className='bg-[#111B1B] w-full rounded-t-[16px]'>
