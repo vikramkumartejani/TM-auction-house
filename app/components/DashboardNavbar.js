@@ -81,7 +81,7 @@ const DashboardNavbar = () => {
                                                 width={pathname === item.href ? 35 : 35}
                                                 height={pathname === item.href ? 35 : 35}
                                             />
-                                            <span className='text-[#fff] text-[16px] font-centraRegular'>{item.label}</span>
+                                            <span className='text-[#fff] text-[16px] font-centraRegular pt-1.5'>{item.label}</span>
                                         </Link>
                                     ))}
                                 </div>
