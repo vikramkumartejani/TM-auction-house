@@ -55,8 +55,6 @@ body {
   background: linear-gradient(180deg, #061b1c 0%, #030a0a 100%);
 }
 
-
-
 /* Toggle */
 .switch {
   font-size: 17px;
@@ -79,8 +77,8 @@ body {
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: #79A09F;
-  transition: .4s;
+  background-color: #79a09f;
+  transition: 0.4s;
   border-radius: 10000px;
 }
 
@@ -91,17 +89,40 @@ body {
   min-width: 20px;
   border-radius: 1000px;
   left: 3;
-  bottom:3px;
+  bottom: 3px;
   transform: rotate(270deg);
   background-color: white;
-  transition: .4s;
+  transition: 0.4s;
 }
 
 .switch input:checked + .slider {
-  background-color: #8BDB00;
+  background-color: #8bdb00;
 }
-
 
 .switch input:checked + .slider:before {
   transform: translateX(1.1em);
+}
+
+/* Custom scrollbar styles */
+.custom-scrollbar {
+  scrollbar-width: thin; /* For Firefox */
+  scrollbar-color: #cbad7e #091618; /* Thumb and track colors */
+  border-radius: 8px !important; /* Rounded corners for thumb */
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+  width: 8px; /* Scrollbar width */
+  height: 8px; /* Scrollbar height (for horizontal scrollbars) */
+  border-radius: 8px !important; /* Rounded corners for thumb */
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background-color: #cbad7e; /* Scrollbar thumb color */
+  border-radius: 8px !important; /* Rounded corners for thumb */
+  border: 2px solid #091618; /* Optional border around the thumb */
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background-color: #091618; /* Scrollbar track color */
+  border-radius: 8px !important; /* Rounded corners for track */
 }
