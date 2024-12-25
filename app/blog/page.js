@@ -18,7 +18,7 @@ const page = () => {
             <div className='md:hidden block'>
                 <DashboardNavbar/>
             </div>
-            <div className=''>
+            <div className='max-w-[1270px] mx-auto w-full'>
                 <div>
                     <h1 className='text-white text-[32px]'>Watch Auction Blog</h1>
                     <h4 className='text-[#CBAD7E] text-[16px] leading-[22px] font-centraRegular'>Your guide to the allure and excitement of luxury watch auctions</h4>

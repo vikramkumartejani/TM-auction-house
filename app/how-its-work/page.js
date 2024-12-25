@@ -10,7 +10,7 @@ const page = () => {
         <div className='md:hidden block'>
           <DashboardNavbar/>
         </div>
-        <div>
+        <div className='max-w-[1270px] mx-auto w-full'>
             <Tabs/>
         </div>
     </DashboardLayout>
