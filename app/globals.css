@@ -54,3 +54,27 @@ body {
 .leaderboard-winner-bg-gradient {
   background: linear-gradient(180deg, #061b1c 0%, #030a0a 100%);
 }
+
+/* Custom scrollbar styles */
+.custom-scrollbar {
+  scrollbar-width: thin; /* For Firefox */
+  scrollbar-color: #cbad7e #091618; /* Thumb and track colors */
+  border-radius: 8px !important; /* Rounded corners for thumb */
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+  width: 8px; /* Scrollbar width */
+  height: 8px; /* Scrollbar height (for horizontal scrollbars) */
+  border-radius: 8px !important; /* Rounded corners for thumb */
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background-color: #cbad7e; /* Scrollbar thumb color */
+  border-radius: 8px !important; /* Rounded corners for thumb */
+  border: 2px solid #091618; /* Optional border around the thumb */
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background-color: #091618; /* Scrollbar track color */
+  border-radius: 8px !important; /* Rounded corners for track */
+}
