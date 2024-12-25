@@ -25,7 +25,7 @@ const page = () => {
       <div className='md:hidden block'>
         <DashboardNavbar/>
       </div>
-      <div className='overflow-hidden w-full flex items-start lg:flex-row flex-col gap-6'>
+      <div className='overflow-hidden w-full max-w-[1270px] mx-auto flex items-start lg:flex-row flex-col gap-6'>
         <div className='w-full max-w-[904px]'>
           <div className='bg-[#111B1B] w-full rounded-t-[16px]'>
             <div className='relative'>
