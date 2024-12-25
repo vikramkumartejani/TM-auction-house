@@ -35,8 +35,8 @@ export default function Leaderboard() {
   };
 
   return (
-    <div className="bg-[#093033]">
-      <div className="w-full md:hidden block">
+    <div className="bg-[#010A0B]">
+      <div className="w-full md:hidden block px-4 pt-4">
         <DashboardNavbar />
       </div>
       <div className="md:hidden block">
