@@ -4,7 +4,7 @@ import { useState } from "react";
 import { FiSearch } from "react-icons/fi";
 import Image from "next/image";
 import { GoHeart } from "react-icons/go";
-import { FaChevronDown } from "react-icons/fa6";
+import { FaChevronDown, FaPlus } from "react-icons/fa6";
 
 const categories = [
   { name: "Beginner", icon: "/icons/beginner.png", color: "bg-[#FF7B8B]" },
@@ -212,12 +212,12 @@ export default function ExploreWatches() {
             className="flex items-center gap-[10px] bg-[#1a1d1c] ps-[4px] pe-4 py-[5px] rounded-full whitespace-nowrap text-[12px] font-centraRegular"
           >
             <div
-              className={`w-[40px] h-[40px] min-w-[40px] rounded-full flex items-center jusitfy-center ${category.color}`}
+              className={`md:w-[40px] w-[25px] md:h-[40px] h-[25px] md:min-w-[40px] min-w-[25px] rounded-full flex items-center jusitfy-center ${category.color}`}
             >
               <img
                 src={category.icon}
                 alt="icon"
-                className="w-[25px] h-[25px] mx-auto"
+                className="md:w-[25px] w-[16px] md:h-[25px] h-[16px] mx-auto"
               />
             </div>
             {category.name}
@@ -226,7 +226,7 @@ export default function ExploreWatches() {
       </div>
 
       {/* Watch Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
         {watches.map((watch) => (
           <div
             key={watch.id}
@@ -236,12 +236,12 @@ export default function ExploreWatches() {
               <img
                 src={watch.image}
                 alt={watch.title}
-                className="w-full h-[167px] object-cover rounded-[12px]"
+                className="w-full md:h-[167px] h-[153.75px] object-cover md:rounded-[12px] rounded-[6px]"
               />
-              <button className="absolute top-[8px] right-[8px] w-[40px] h-[40px] flex items-center justify-center rounded-full bg-black/50">
-                <GoHeart className="w-[24px] h-[24px]" />
+              <button className="absolute top-[8px] right-[8px] md:w-[40px] w-[33px] md:h-[40px] h-[33px] flex items-center justify-center rounded-full bg-black/50">
+                <GoHeart className="md:w-[24px] w-[16px] md:h-[24px] h-[16px]" />
               </button>
-              <div className="absolute top-[8px] left-[8px]">
+              <div className="md:block hidden absolute top-[8px] left-[8px]">
                 <div className="bg-[#F7F1E7] flex items-center gap-[6px] rounded-full p-[4px] pe-[15px] text-sm">
                   <Image
                     src={watch.bidder.image}
@@ -268,24 +268,53 @@ export default function ExploreWatches() {
                 </div>
               </div>
               <div className="absolute bottom-[8px] right-[8px] text-black rounded-full">
-                <span className="text-[14px] text-[#145452] bg-white px-[12px] h-[40px] pb-[9px] pt-[14px] rounded-l-[8px]">
+                <span className="md:text-[14px] text-[10.24px] text-[#145452] bg-white px-[12px] h-[40px] pb-[9px] pt-[14px] rounded-l-[8px]">
                   21:{watch.timeLeft}
                 </span>
-                <span className="font-centraRegular text-[#093033] bg-[#FFE9C2] text-[14px] px-[12px] h-[40px] pb-[9px] pt-[14px] rounded-r-[8px]">
+                <span className="font-centraRegular text-[#093033] bg-[#FFE9C2] text-[10.24px] md:text-[14px] px-[12px] h-[40px] pb-[9px] pt-[14px] rounded-r-[8px]">
                   ${watch.price.toFixed(2)}
                 </span>
               </div>
             </div>
             <div className="px-[8px] pt-[28px] pb-[17px]">
-              <h3 className="text-[16px] text-[#FFE9C2] font-semibold mb-[10px]">
+              <h3 className="md:text-[16px] text-[14px] text-[#FFE9C2] font-semibold mb-[10px]">
                 {watch.title}
               </h3>
-              <p className="text-white font-centraRegular mb-[26px]">
+              <p className="md:text-[16px] text-[12px] text-white font-centraRegular mb-[26px]">
                 {watch.condition}
               </p>
-              <button className="w-full bg-[#8BDB00] text-[#0B0A0A] pb-3 pt-4 rounded-full hover:bg-[#84b824] transition-colors">
+              <button className="md:block hidden w-full bg-[#8BDB00] text-[#0B0A0A] pb-3 pt-4 rounded-full hover:bg-[#84b824] transition-colors">
                 Place Bid
               </button>
+              <div className="bg-[#F7F1E7] md:hidden flex items-center justify-between gap-[6px] rounded-full p-[4px] pe-[4px] text-sm">
+                <div className="flex items-center gap-[6px]">
+                  <Image
+                    src={watch.bidder.image}
+                    alt={watch.bidder.name}
+                    width={24}
+                    height={24}
+                    className="w-[24px] h-[24px] min-w-[24px] rounded-full"
+                  />
+                  <div>
+                    <p className="text-[10px] leading-[13px] text-[#0B0A0A]">
+                      {watch.bidder.name}
+                    </p>
+                    {watch.bidder.isTopBidder && (
+                      <p className="flex  items-center text-[#F7F1E7] font-centraRegular text-[7px] ps-[3px] pe-[7px] pt-[3px] leading-[0px] h-[13px] bg-[#093033] rounded-[4px]">
+                        <img
+                          src="/icons/medal.png"
+                          alt="medal"
+                          className="w-[13px]"
+                        />{" "}
+                        Top Bidder
+                      </p>
+                    )}
+                  </div>
+                </div>
+                <button className="md:hidden flex items-center justify-center bg-[#8BDB00] text-[#0B0A0A] py-3 w-[32px] h-[32px] rounded-full hover:bg-[#84b824] transition-colors">
+                  <FaPlus />
+                </button>
+              </div>
             </div>
           </div>
         ))}
