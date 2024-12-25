@@ -1,9 +1,15 @@
 import React from 'react'
 import DashboardLayout from '../components/DashboardLayout'
+import Tabs from './components/Tabs'
+import Accordion from './components/Accordion'
 
 const page = () => {
   return (
-    <DashboardLayout>How it’s work?</DashboardLayout>
+    <DashboardLayout>
+        <div>
+            <Tabs/>
+        </div>
+    </DashboardLayout>
   )
 }
 

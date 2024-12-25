@@ -13,6 +13,18 @@ export default function Sidebar() {
       href: "/home-page",
       label: "Home",
     },
+    {
+      icon: "/sidebar-icons/order-history-non-active.svg",
+      activeIcon: "/sidebar-icons/order-history-active.svg",
+      href: "/order-history",
+      label: "Order History",
+    },
+    {
+      icon: "/sidebar-icons/blog-non-active.svg",
+      activeIcon: "/sidebar-icons/blog-active.svg",
+      href: "/blog",
+      label: "Blog",
+    },
 
   ];
 

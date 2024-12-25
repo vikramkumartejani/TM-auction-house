@@ -10,6 +10,7 @@ export default {
       fontFamily: {
         centraNo2: ['CentraNo2', 'sans-serif'], 
         "centraRegular": ['CentraNo2-Regular', 'sans-serif'], 
+        "CentraNo2Light": ['CentraNo2-Light', 'sans-serif'], 
       },
     },
   },

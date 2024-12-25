@@ -5,7 +5,13 @@
 @font-face {
   font-family: "CentraNo2";
   src: url("/font/CentraNo2-Medium.ttf") format("truetype");
-  font-weight: 500; 
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: "CentraNo2-Light";
+  src: url("/font/CentraNo2-Light.ttf") format("truetype");
+  font-weight: 500;
 }
 
 @font-face {
@@ -14,15 +20,13 @@
   font-weight: 400;
 }
 
-
 body {
   font-family: "CentraNo2", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  
 }
 
-*{
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -32,4 +36,17 @@ body {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+}
+
+.overflow-x-auto {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.whitespace-nowrap {
+  white-space: nowrap;
+}
+
+.max-w-full {
+  max-width: 100%;
 }
