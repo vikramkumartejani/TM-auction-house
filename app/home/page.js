@@ -9,14 +9,15 @@ import DashboardNavbar from "../components/DashboardNavbar";
 
 export default function Dashboard() {
   return (
-    <div className="bg-[#010A0B] pt-4">
-      <div className="px-4 md:hidden block">
-      <DashboardNavbar />
+    <div className="bg-[#010A0B]">
+      <div className="px-4 pt-4 md:hidden block">
+        <DashboardNavbar />
       </div>
       <div className="min-h-screen bg-[#010A0B] flex items-center justify-center overflow-hidden">
         <Sidebar />
-        <div className="text-white min-h-screen">
+        <div className="text-white min-h-screen overflow-hidden md:pb-0 pb-[65px]">
           {/* <MovingBanner /> */}
+          <MovingBanner />
           <div className="xl:px-[24px] xl:py-[24px] md:px-[20px] py-[20px] px-[16px]">
             <div className="max-w-[1280px] mx-auto grid grid-cols-1 md:grid-cols-12 gap-[24px] items-start">
               {/* Stats Grid - Left Side */}
@@ -87,7 +88,9 @@ export default function Dashboard() {
                           <p className="text-[12px] font-centraRegular mb-[4px]">
                             Leading Bid
                           </p>
-                          <p className="md:text-[18px] text-[16px]">$12,200.00</p>
+                          <p className="md:text-[18px] text-[16px]">
+                            $12,200.00
+                          </p>
                         </div>
                       </div>
                       <div className="flex justify-between items-center flex-wrap gap-1">
