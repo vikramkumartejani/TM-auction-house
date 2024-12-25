@@ -47,7 +47,7 @@ const BuyersTab = ({ timeFilter }) => {
   return (
     <>
       <TopThreeGrid items={topBuyers} />
-      {/* <LeaderboardTable data={tableData} showWatchImae={false} /> */}
+      <LeaderboardTable data={tableData} showWatchImae={false} />
     </>
   );
 };
