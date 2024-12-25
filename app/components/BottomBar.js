@@ -39,7 +39,7 @@ const BottomBar = () => {
         },
     ];
     return (
-        <div className="absolute bottom-0 w-full left-0 md:hidden block">
+        <div className="fixed bottom-0 w-full left-0 md:hidden block">
             <nav className="flex- w-full bg-[#093033]">
                 <ul className="flex items-center gap-1 py-3">
                     {navItemsUpper.map((item) => (

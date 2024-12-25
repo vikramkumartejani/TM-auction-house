@@ -1,62 +1,43 @@
 'use client'
 
-import { useState } from 'react'
-
 const Notification = () => {
-    const [enabled, setEnabled] = useState(false)
+    return (
+        <div className='bg-[#111B1B] w-full lg:w-[300px] xl:w-[342px] p-6 rounded-2xl'>
+            <h3 className='text-[#FFFFFF] text-[20px] leading-[36px] pb-3 border-b border-[#FFFFFF1A]'>Notification</h3>
+            <div className='mt-4 bg-[#093033] rounded-xl px-4 pt-3.5 pb-2 flex items-center justify-between gap-2'>
+                <h2 className='text-white text-[16px] leading-[28px] font-medium'>Show in Leaderboard</h2>
+                <label className="switch">
+                    <input type="checkbox" />
+                        <span className="slider"></span>
+                </label>
+            </div>
 
-  return (
-    <div className='bg-[#111B1B] w-[342px] p-6 rounded-2xl'>
-        <h3 className='text-[#FFFFFF] text-[20px] leading-[36px] pb-1.5 border-b border-[#FFFFFF1A]'>Notification</h3>
-        <div className='mt-4 bg-[#093033] rounded-xl px-4 pt-3.5 pb-2'>
-            <h2 className='text-white text-[16px] leading-[28px] font-medium'>Show in Leaderboard</h2>
- <button
-        type="button"
-        role="switch"
-        aria-checked={enabled}
-        onClick={() => setEnabled(!enabled)}
-        className={`
-          relative inline-flex h-14 w-24 flex-shrink-0 cursor-pointer rounded-full border-2 border-transparent 
-          transition-colors duration-200 ease-in-out focus:outline-none focus-visible:ring-2 
-          focus-visible:ring-white focus-visible:ring-opacity-75
-          ${enabled ? 'bg-lime-400' : 'bg-slate-400'}
-        `}
-      >
-        <span className="sr-only">Toggle switch</span>
-        <span
-          aria-hidden="true"
-          className={`
-            pointer-events-none inline-block h-12 w-12 transform rounded-full 
-            bg-white shadow-lg ring-0 transition duration-200 ease-in-out
-            ${enabled ? 'translate-x-10' : 'translate-x-0'}
-          `}
-        />
-      </button>
- <button
-        type="button"
-        role="switch"
-        aria-checked={enabled}
-        onClick={() => setEnabled(!enabled)}
-        className={`
-          relative inline-flex h-14 w-24 flex-shrink-0 cursor-pointer rounded-full border-2 border-transparent 
-          transition-colors duration-200 ease-in-out focus:outline-none focus-visible:ring-2 
-          focus-visible:ring-white focus-visible:ring-opacity-75
-          ${enabled ? 'bg-lime-400' : 'bg-slate-400'}
-        `}
-      >
-        <span className="sr-only">Toggle switch</span>
-        <span
-          aria-hidden="true"
-          className={`
-            pointer-events-none inline-block h-12 w-12 transform rounded-full 
-            bg-white shadow-lg ring-0 transition duration-200 ease-in-out
-            ${enabled ? 'translate-x-10' : 'translate-x-0'}
-          `}
-        />
-      </button>
+            <div className='mt-6 border-b border-[#FFFFFF1A] pb-4 flex items-center justify-between gap-2'>
+                <h2 className='text-[#FFFFFFCC] text-[16px] leading-[25px] font-centraRegular max-w-[223px]'>Get announcements from TMA Admins</h2>
+                <label className="switch">
+                    <input type="checkbox" />
+                        <span className="slider"></span>
+                </label>
+            </div>
+
+            <div className='mt-6 border-b border-[#FFFFFF1A] pb-4 flex items-center justify-between gap-2'>
+                <h2 className='text-[#FFFFFFCC] text-[16px] leading-[25px] font-centraRegular max-w-[223px]'>Get an SMS alert each time new auction is posted</h2>
+                <label className="switch">
+                    <input type="checkbox" />
+                        <span className="slider"></span>
+                </label>
+            </div>
+
+            <div className='mt-6 flex items-center justify-between gap-2'>
+                <h2 className='text-[#FFFFFFCC] text-[16px] leading-[25px] font-centraRegular max-w-[223px]'>Get notified 5 minutes before an auction you’re participating in ends</h2>
+                <label className="switch">
+                    <input type="checkbox" />
+                        <span className="slider"></span>
+                </label>
+            </div>
+
         </div>
-    </div>
-  )
+    )
 }
 
 export default Notification

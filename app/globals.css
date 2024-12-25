@@ -54,3 +54,54 @@ body {
 .leaderboard-winner-bg-gradient {
   background: linear-gradient(180deg, #061b1c 0%, #030a0a 100%);
 }
+
+
+
+/* Toggle */
+.switch {
+  font-size: 17px;
+  position: relative;
+  display: inline-block;
+  min-width: 44px;
+  min-height: 24px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #79A09F;
+  transition: .4s;
+  border-radius: 10000px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  min-height: 20px;
+  min-width: 20px;
+  border-radius: 1000px;
+  left: 3;
+  bottom:3px;
+  transform: rotate(270deg);
+  background-color: white;
+  transition: .4s;
+}
+
+.switch input:checked + .slider {
+  background-color: #8BDB00;
+}
+
+
+.switch input:checked + .slider:before {
+  transform: translateX(1.1em);
+}
