@@ -9,7 +9,7 @@ import DashboardNavbar from '../components/DashboardNavbar';
 const page = () => {
     return (
         <DashboardLayout>
-            <div>
+            <div className='md:hidden block'>
                 <DashboardNavbar/>
             </div>
             <div>

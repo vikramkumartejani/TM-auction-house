@@ -15,7 +15,7 @@ const page = () => {
     };
     return (
         <DashboardLayout>
-            <div className=''>
+            <div className='md:hidden block'>
                 <DashboardNavbar/>
             </div>
             <div className=''>

@@ -14,6 +14,12 @@ export default function Sidebar() {
       label: "Home",
     },
     {
+      icon: "/sidebar-icons/leaderboard-non-active.svg",
+      activeIcon: "/sidebar-icons/leaderboard-active.svg",
+      href: "/leaderboard",
+      label: "Leaderboard",
+    },
+    {
       icon: "/sidebar-icons/order-history-non-active.svg",
       activeIcon: "/sidebar-icons/order-history-active.svg",
       href: "/order-history",
