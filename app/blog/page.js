@@ -4,6 +4,8 @@ import DashboardLayout from '../components/DashboardLayout'
 import Image from 'next/image';
 import LatestNews from './LatestNews';
 import Link from 'next/link';
+import DashboardNavbar from '../components/DashboardNavbar';
+import BottomBar from '../components/BottomBar';
 
 const page = () => {
     const [activeTab, setActiveTab] = useState('All Articles');
@@ -13,7 +15,10 @@ const page = () => {
     };
     return (
         <DashboardLayout>
-            <div className=''>
+            <div className='md:hidden block'>
+                <DashboardNavbar/>
+            </div>
+            <div className='max-w-[1270px] mx-auto w-full'>
                 <div>
                     <h1 className='text-white text-[32px]'>Watch Auction Blog</h1>
                     <h4 className='text-[#CBAD7E] text-[16px] leading-[22px] font-centraRegular'>Your guide to the allure and excitement of luxury watch auctions</h4>
@@ -70,6 +75,9 @@ const page = () => {
                 </div>
 
                 <LatestNews />
+            </div>
+            <div>
+                <BottomBar/>
             </div>
         </DashboardLayout>
     )

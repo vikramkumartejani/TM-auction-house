@@ -3,12 +3,16 @@ import DashboardLayout from '../components/DashboardLayout'
 import Link from 'next/link'
 import { IoIosArrowForward } from "react-icons/io";
 import Image from 'next/image';
+import DashboardNavbar from '../components/DashboardNavbar';
 
 
 const page = () => {
     return (
         <DashboardLayout>
-            <div>
+            <div className='md:hidden block'>
+                <DashboardNavbar/>
+            </div>
+            <div className='max-w-[1270px] mx-auto w-full'>
                 <div className='flex items-center gap-2 md:border-b border-[#FFFFFF1A] md:pb-6'>
                     <Link href='/blog' className='text-[#FFFFFF80] text-[16px] font-centraRegular pt-1'>Blog</Link>
                     <IoIosArrowForward size={18} className='text-[#FFFFFF80]' />

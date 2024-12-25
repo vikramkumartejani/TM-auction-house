@@ -21,11 +21,11 @@ const Tabs = () => {
                 );
             case "whatsThis":
                 return (
-                  <WhatsThis/>
+                    <WhatsThis />
                 );
             case "termsServices":
                 return (
-                    <TermsServices/>
+                    <TermsServices />
                 );
             default:
                 return null;
@@ -34,13 +34,13 @@ const Tabs = () => {
 
     return (
         <div className="">
-            <div className="flex items-center flex-wrap gap-1.5">
+            <div className="w-fit flex items-center flex-wrap gap-1.5">
                 {tabs.map((tab) => (
                     <button
                         key={tab.id}
                         className={`px-4 flex-grow md:px-6 h-[46px] pt-[3px] rounded-[24px] font-medium text-xs sm:text-sm leading-[18px] ${activeTab === tab.id
-                                ? "bg-[#FFE9C2] text-[#0B0A0A]"
-                                : "bg-[#093033] text-white font-centraRegular"
+                            ? "bg-[#FFE9C2] text-[#0B0A0A]"
+                            : "bg-[#093033] text-white font-centraRegular"
                             }`}
                         onClick={() => setActiveTab(tab.id)}
                     >
