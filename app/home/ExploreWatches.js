@@ -277,42 +277,37 @@ export default function ExploreWatches() {
               </div>
             </div>
             <div className="px-[8px] pt-[28px] pb-[17px]">
-              <h3 className="md:text-[16px] text-[14px] text-[#FFE9C2] font-semibold mb-[10px]">
+              <h3 className="md:text-[16px] text-[14px] text-[#FFE9C2] font-semibold md:mb-[10px] mb-[2px]">
                 {watch.title}
               </h3>
-              <p className="md:text-[16px] text-[12px] text-white font-centraRegular mb-[26px]">
+              <p className="md:text-[16px] text-[12px] text-white font-centraRegular md:mb-[26px] mb-[8px]">
                 {watch.condition}
               </p>
               <button className="md:block hidden w-full bg-[#8BDB00] text-[#0B0A0A] pb-3 pt-4 rounded-full hover:bg-[#84b824] transition-colors">
                 Place Bid
               </button>
-              <div className="bg-[#F7F1E7] md:hidden flex items-center justify-between gap-[6px] rounded-full p-[4px] pe-[4px] text-sm">
+              <div className="md:hidden flex items-center justify-between gap-[6px] rounded-full p-[4px] pe-[4px] text-sm border border-[#F7F1E73D]">
                 <div className="flex items-center gap-[6px]">
                   <Image
                     src={watch.bidder.image}
                     alt={watch.bidder.name}
                     width={24}
                     height={24}
-                    className="w-[24px] h-[24px] min-w-[24px] rounded-full"
+                    className="w-[25px] h-[25px] min-w-[25px] rounded-full"
                   />
                   <div>
-                    <p className="text-[10px] leading-[13px] text-[#0B0A0A]">
+                    <p className="text-[12px] leading-[13px] text-[#FFFFFF]">
                       {watch.bidder.name}
                     </p>
                     {watch.bidder.isTopBidder && (
-                      <p className="flex  items-center text-[#F7F1E7] font-centraRegular text-[7px] ps-[3px] pe-[7px] pt-[3px] leading-[0px] h-[13px] bg-[#093033] rounded-[4px]">
-                        <img
-                          src="/icons/medal.png"
-                          alt="medal"
-                          className="w-[13px]"
-                        />{" "}
+                      <p className="flex  items-center text-[#FFE9C2] font-centraRegular text-[9px] leading-[13px] rounded-[4px]">
                         Top Bidder
                       </p>
                     )}
                   </div>
                 </div>
-                <button className="md:hidden flex items-center justify-center bg-[#8BDB00] text-[#0B0A0A] py-3 w-[32px] h-[32px] rounded-full hover:bg-[#84b824] transition-colors">
-                  <FaPlus />
+                <button className="md:hidden flex items-center justify-center bg-[#8BDB00] text-[#0B0A0A] w-[32px] h-[32px] rounded-full hover:bg-[#84b824] transition-colors">
+                  <FaPlus size={20} />
                 </button>
               </div>
             </div>
