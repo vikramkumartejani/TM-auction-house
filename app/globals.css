@@ -126,3 +126,9 @@ body {
   background-color: #091618; /* Scrollbar track color */
   border-radius: 8px !important; /* Rounded corners for track */
 }
+
+@media screen and (max-width: 410px) {
+  .explore-watch-grid {
+    grid-template-columns: 1fr !important;
+  }
+}

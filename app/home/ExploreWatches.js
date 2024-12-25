@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { FiSearch } from "react-icons/fi";
 import Image from "next/image";
 import { GoHeart } from "react-icons/go";
@@ -39,6 +39,7 @@ const watches = [
       name: "Jane Cooper",
       image: "/images/leaderboard-profile1.png",
       isTopBidder: true,
+      icon: "/icons/medal.png",
     },
   },
   {
@@ -52,6 +53,7 @@ const watches = [
       name: "Jane Cooper",
       image: "/images/leaderboard-profile1.png",
       isTopBidder: true,
+      icon: "/icons/badge2.png",
     },
   },
   {
@@ -65,6 +67,7 @@ const watches = [
       name: "Jane Cooper",
       image: "/images/leaderboard-profile1.png",
       isTopBidder: true,
+      icon: "/icons/badge.png",
     },
   },
   {
@@ -78,6 +81,7 @@ const watches = [
       name: "Jane Cooper",
       image: "/images/leaderboard-profile1.png",
       isTopBidder: true,
+      icon: "/icons/trophy2.png",
     },
   },
   {
@@ -91,6 +95,7 @@ const watches = [
       name: "Jane Cooper",
       image: "/images/leaderboard-profile1.png",
       isTopBidder: true,
+      icon: "/icons/diamond.png",
     },
   },
   {
@@ -104,6 +109,35 @@ const watches = [
       name: "Jane Cooper",
       image: "/images/leaderboard-profile1.png",
       isTopBidder: true,
+      icon: "/icons/badge.png",
+    },
+  },
+  {
+    id: 7,
+    image: "/images/watch2.png",
+    title: "1986 Omega Constellation 1448 431.6",
+    condition: "Very good condition",
+    price: 1599.0,
+    timeLeft: "05:45",
+    bidder: {
+      name: "Jane Cooper",
+      image: "/images/leaderboard-profile1.png",
+      isTopBidder: true,
+      icon: "/icons/medal.png",
+    },
+  },
+  {
+    id: 8,
+    image: "/images/watch.png",
+    title: "1986 Omega Constellation 1448 431.6",
+    condition: "Very good condition",
+    price: 1599.0,
+    timeLeft: "05:45",
+    bidder: {
+      name: "Jane Cooper",
+      image: "/images/leaderboard-profile1.png",
+      isTopBidder: true,
+      icon: "/icons/badge2.png",
     },
   },
   // Add more watches as needed
@@ -113,6 +147,26 @@ export default function ExploreWatches() {
   const [activeTab, setActiveTab] = useState("All");
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const tabs = ["All", "Auctions", "Listings", "Sold"];
+
+  const [visibleCards, setVisibleCards] = useState(6);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+
+    checkMobile();
+    window.addEventListener("resize", checkMobile);
+
+    return () => {
+      window.removeEventListener("resize", checkMobile);
+    };
+  }, []);
+
+  const loadMore = () => {
+    setVisibleCards((prevCount) => prevCount + 6);
+  };
 
   return (
     <main className="min-h-screen text-white mt-[22px]">
@@ -225,9 +279,8 @@ export default function ExploreWatches() {
         ))}
       </div>
 
-      {/* Watch Grid */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        {watches.map((watch) => (
+      <div className="grid grid-cols-2 lg:grid-cols-3 md:gap-x-[13px] md:gap-y-[16px] gap-x-[8px] gap-y-[12px] explore-watch-grid">
+        {watches.slice(0, visibleCards).map((watch) => (
           <div
             key={watch.id}
             className="bg-[#091618] rounded-[16px] overflow-hidden p-[8px]"
@@ -254,29 +307,29 @@ export default function ExploreWatches() {
                     <p className="text-[10px] leading-[13px] text-[#0B0A0A]">
                       {watch.bidder.name}
                     </p>
-                    {watch.bidder.isTopBidder && (
-                      <p className="flex  items-center text-[#F7F1E7] font-centraRegular text-[7px] ps-[3px] pe-[7px] pt-[3px] leading-[0px] h-[13px] bg-[#093033] rounded-[4px]">
+                    <p className="flex items-center text-[#F7F1E7] font-centraRegular text-[7px] ps-[3px] pe-[7px] pt-[3px] leading-[0px] h-[13px] bg-[#093033] rounded-[4px]">
+                      {watch.bidder.icon && (
                         <img
-                          src="/icons/medal.png"
+                          src={watch.bidder.icon}
                           alt="medal"
-                          className="w-[13px]"
-                        />{" "}
-                        Top Bidder
-                      </p>
-                    )}
+                          className="w-[10px] h-[10px] object-contain mr-[2px]"
+                        />
+                      )}{" "}
+                      Top Bidder
+                    </p>
                   </div>
                 </div>
               </div>
               <div className="absolute bottom-[8px] right-[8px] text-black rounded-full">
-                <span className="md:text-[14px] text-[10.24px] text-[#145452] bg-white px-[12px] h-[40px] pb-[9px] pt-[14px] rounded-l-[8px]">
+                <span className="md:text-[14px] text-[10.24px] text-[#145452] bg-white px-[12px] h-[40px] pb-[9px] pt-[12.5px] rounded-l-[8px]">
                   21:{watch.timeLeft}
                 </span>
-                <span className="font-centraRegular text-[#093033] bg-[#FFE9C2] text-[10.24px] md:text-[14px] px-[12px] h-[40px] pb-[9px] pt-[14px] rounded-r-[8px]">
+                <span className="font-centraRegular text-[#093033] bg-[#FFE9C2] text-[10.24px] md:text-[14px] px-[12px] h-[40px] pb-[9px] pt-[12.5px] rounded-r-[8px]">
                   ${watch.price.toFixed(2)}
                 </span>
               </div>
             </div>
-            <div className="px-[8px] pt-[28px] pb-[17px]">
+            <div className="px-[8px] md:pt-[28px] pt-[12.55px] md:pb-[17px] pb-[0.73px]">
               <h3 className="md:text-[16px] text-[14px] text-[#FFE9C2] font-semibold md:mb-[10px] mb-[2px]">
                 {watch.title}
               </h3>
@@ -288,19 +341,34 @@ export default function ExploreWatches() {
               </button>
               <div className="md:hidden flex items-center justify-between gap-[6px] rounded-full p-[4px] pe-[4px] text-sm border border-[#F7F1E73D]">
                 <div className="flex items-center gap-[6px]">
-                  <Image
-                    src={watch.bidder.image}
-                    alt={watch.bidder.name}
-                    width={24}
-                    height={24}
-                    className="w-[25px] h-[25px] min-w-[25px] rounded-full"
-                  />
+                  <div className="relative">
+                    <Image
+                      src={watch.bidder.image}
+                      alt={watch.bidder.name}
+                      width={24}
+                      height={24}
+                      className="w-[25px] h-[25px] min-w-[25px] rounded-full"
+                    />
+                    {watch.bidder.icon && (
+                      <div className="absolute right-[-2.5px] bottom-[-2px]">
+                        <div className="min-w-[13.14px] w-[13.14px] h-[13.14px] border-[1px] pt-[2px] ps-[1px] border-black rounded-full flex items-center justify-center bg-white">
+                          <Image
+                            src={watch.bidder.icon}
+                            alt="icon"
+                            width={40}
+                            height={40}
+                            className="w-[9px] h-[9px] rounded-full"
+                          />
+                        </div>
+                      </div>
+                    )}
+                  </div>
                   <div>
                     <p className="text-[12px] leading-[13px] text-[#FFFFFF]">
                       {watch.bidder.name}
                     </p>
                     {watch.bidder.isTopBidder && (
-                      <p className="flex  items-center text-[#FFE9C2] font-centraRegular text-[9px] leading-[13px] rounded-[4px]">
+                      <p className="flex items-center text-[#FFE9C2] font-centraRegular text-[9px] leading-[13px] rounded-[4px] mb-[-3px] pt-[2px]">
                         Top Bidder
                       </p>
                     )}
@@ -314,6 +382,16 @@ export default function ExploreWatches() {
           </div>
         ))}
       </div>
+      {isMobile && visibleCards < watches.length && (
+        <div className="mt-8 flex justify-center">
+          <button
+            onClick={loadMore}
+            className="text-[#FFE9C2] font-centraRegular px-[26px] pt-[13px] pb-[10px] rounded-full hover:border-white transition-colors border-[1.5px] border-[#F7F1E733]"
+          >
+            Load More
+          </button>
+        </div>
+      )}
     </main>
   );
 }

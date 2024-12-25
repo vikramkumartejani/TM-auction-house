@@ -6,6 +6,7 @@ import Leaderboard from "./Leaderboard";
 import ExploreWatches from "./ExploreWatches";
 import BottomBar from "../components/BottomBar";
 import DashboardNavbar from "../components/DashboardNavbar";
+import KOTHWhite from "./KOTHWhite";
 
 export default function Dashboard() {
   return (
@@ -112,7 +113,7 @@ export default function Dashboard() {
                   </div>
                   <diV className="xl:hidden flex gap-[8px] ">
                     <div className="max-w-[300px] w-[300px]">
-                      <Leaderboard
+                      <KOTHWhite
                         title="King of the Hills"
                         data={kingOfTheHillsData}
                         viewAllProp="View all"
@@ -127,7 +128,7 @@ export default function Dashboard() {
               </div>
 
               {/* Leaderboard - Right Side */}
-              <div className="xl:col-span-3 xl:flex hidden flex-col gap-[24px]">
+              <div className="xl:col-span-3 col-span-12 flex flex-col gap-[24px]">
                 <div className="xl:flex hidden">
                   <Leaderboard
                     title="King of the Hills"

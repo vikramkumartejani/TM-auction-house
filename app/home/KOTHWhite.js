@@ -5,7 +5,7 @@ import { IoMdArrowDropdown, IoMdArrowDropup } from "react-icons/io";
 // Leaderboard Item Component
 const LeaderboardItem = ({ name, subtitle, amount, trend, image, icon }) => {
   return (
-    <div className="rounded-[8px] flex items-center justify-between gap-1 text-white">
+    <div className="xl:bg-transparent bg-white xl:px-0 xl:py-0 px-[8px] py-[6px] rounded-[8px] flex items-center justify-between gap-1 xl:text-white text-[#0B0A0A]">
       <div className="flex items-center gap-[12px]">
         <div className="relative min-w-[40px] w-[40px] h-[40px] rounded-full border-[1.8px] border-[#CBAD7E] bg-gray-700">
           <Image
@@ -31,13 +31,15 @@ const LeaderboardItem = ({ name, subtitle, amount, trend, image, icon }) => {
         </div>
         <div className="flex flex-col xl:gap-1 pt-[4px]">
           <p className="text-[14px]">{name}</p>
-          <p className="text-[12px] text-[#FFFFFFB2] font-centraRegular">
+          <p className="text-[12px] xl:text-[#FFFFFFB2] text-[#0B0A0A99] font-centraRegular">
             {subtitle}
           </p>
         </div>
       </div>
       <div className="flex items-center xl:gap-2 gap-1">
-        <span className="text-[#CBAD7E] text-[14px] pt-1">${amount}</span>
+        <span className="xl:text-[#CBAD7E] text-[#0B0A0A] text-[14px] pt-1">
+          ${amount}
+        </span>
         {trend === "up" ? (
           <IoMdArrowDropup size={20} className="text-[#2AB540]" />
         ) : (
@@ -49,20 +51,25 @@ const LeaderboardItem = ({ name, subtitle, amount, trend, image, icon }) => {
 };
 
 // Leaderboard Component
-const Leaderboard = ({
+const KOTHWhite = ({
   title = "Leaderboard",
   data = [],
   viewAllProp = "View all",
 }) => {
   return (
-    <div className="bg-[#091618] rounded-[16px] xl:p-[24px] p-[16px]">
-      <div className="flex flex-row justify-between items-center xl:pb-[22px] pb-[14px] xl:gap-1 gap-[2px] border-b border-[#FFFFFF1A]">
-        <h2 className="text-[20px] text-white capitalize">{title}</h2>
-        <button className="text-[14px] text-[#FFFFFFB2] hover:text-white">
+    <div className="bg-goldenGradient xl:bg-[#091618] xl:bg-none rounded-[16px] xl:p-[24px] p-[16px]">
+      <div className="flex xl:flex-row flex-col xl:justify-between xl:items-center xl:pb-[22px] pb-[14px] xl:gap-1 gap-[2px] xl:border-b border-[#FFFFFF1A]">
+        <h2 className="text-[20px] xl:text-white text-[#0B0A0A] xl:capitalize uppercase">
+          {title}
+        </h2>
+        <button className="xl:flex hidden text-[14px] text-[#FFFFFFB2] hover:text-white">
           {viewAllProp}
         </button>
+        <p className="xl:hidden flex text-[#0B0A0A] text-[14px] font-centraRegular mt-[-2px]">
+          Users winning the most
+        </p>
       </div>
-      <div className="xl:space-y-[24px] space-y-[14px] pt-[20px]">
+      <div className="xl:space-y-[24px] space-y-[4px] xl:pt-[20px]">
         {data.map((item, index) => (
           <LeaderboardItem
             key={index}
@@ -79,4 +86,4 @@ const Leaderboard = ({
   );
 };
 
-export default Leaderboard;
+export default KOTHWhite;
