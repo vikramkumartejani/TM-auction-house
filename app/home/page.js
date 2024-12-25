@@ -10,7 +10,7 @@ import DashboardNavbar from "../components/DashboardNavbar";
 export default function Dashboard() {
   return (
     <div className="bg-[#010A0B] pt-4">
-      <div className="px-4">
+      <div className="px-4 md:hidden block">
       <DashboardNavbar />
       </div>
       <div className="min-h-screen bg-[#010A0B] flex items-center justify-center overflow-hidden">
