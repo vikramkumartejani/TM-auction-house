@@ -17,6 +17,12 @@ const DashboardNavbar = () => {
             label: "Home",
         },
         {
+            icon: "/sidebar-icons/leaderboard-non-active.svg",
+            activeIcon: "/sidebar-icons/leaderboard-active.svg",
+            href: "/leaderboard",
+            label: "Leaderboard",
+        },
+        {
             icon: "/sidebar-icons/order-history-non-active.svg",
             activeIcon: "/sidebar-icons/order-history-active.svg",
             href: "/order-history",
@@ -86,22 +92,22 @@ const DashboardNavbar = () => {
                                     ))}
                                 </div>
 
-                                {/* Spacer */}
-                                <div className="flex-grow"></div>
-
-                                {/* Lower navigation items */}
-                                <div className="flex flex-col gap-4 border-t pt-4">
+                                <div className="flex flex-col gap-4 pt-4">
                                     {navItemsLower.map((item, index) => (
                                         <a
-                                            href={item.href}
-                                            key={index}
-                                            className="flex items-center gap-3 p-2 hover:bg-gray-100 rounded"
+                                        href={item.href}
+                                        key={index}
+                                            className="flex items-center gap-3 p-2"
                                         >
                                             <Image src={item.icon} alt={item.label} width={24} height={24} />
-                                            <span>{item.label}</span>
+                                            <span className='text-[#fff] text-[16px] font-centraRegular pt-1.5'>{item.label}</span>
                                         </a>
                                     ))}
                                 </div>
+                                    <Link href='/notification' className="pl-2 my-8"><Image src='/sidebar-icons/diamond.svg' alt="profile-sidebar" width={24} height={24} /></Link>
+                                <Link href='/notification' className="pl-2"><Image src='/sidebar-icons/bell.svg' alt="profile-sidebar" width={28} height={28} /></Link>
+                                        <Link href='/notification' className="pl-2 mt-8"><Image src='/assets/whatsapp.svg' alt="profile-sidebar" width={50} height={50} /></Link>
+                                <Link href='/profile' className="pl-2 mt-8"><Image src='/sidebar-icons/profile-sidebar.svg' alt="profile-sidebar" width={50} height={50} /></Link>
                             </div>
                         </div>
                     </>

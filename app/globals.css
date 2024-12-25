@@ -126,3 +126,26 @@ body {
   background-color: #091618; /* Scrollbar track color */
   border-radius: 8px !important; /* Rounded corners for track */
 }
+
+
+/* Scrollbar */
+.scrollbar-container::-webkit-scrollbar-track {
+  background: #093033; /* Background color of the track */
+  border-radius: 4px; /* Optional: Rounded corners */
+}
+
+.scrollbar-container::-webkit-scrollbar-thumb {
+  background-color: #1ABC9C; /* Scrollbar color */
+  border-radius: 4px; /* Optional: Rounded corners */
+  border: 2px solid #093033; /* Creates space around thumb */
+}
+
+.scrollbar-container::-webkit-scrollbar {
+  width: 5px !important; /* Scrollbar width */
+  height: 5px !important; /* Scrollbar height (for horizontal scrollbars) */
+}
+
+.scrollbar-container {
+  scrollbar-width: thin; /* Thin scrollbar */
+  scrollbar-color: white #093033; /* Thumb color and track color */
+}

@@ -44,8 +44,8 @@ export default function Sidebar() {
 
   return (
     <div className="md:block hidden">
-      <div className="min-h-screen flex py-8 min-w-[86px] w-[86px]"></div>
-      <div className="fixed top-0 left-0 min-h-screen bg-[#093033] py-8 w-[86px] z-[999]">
+      <div className="h-screen flex py-8 min-w-[86px] w-[86px]"></div>
+      <div className="fixed overflow-y-auto top-0 left-0 h-screen bg-[#093033] py-8 w-[86px] z-[999] custom-scrollbar">
         {/* Logo */}
         <Link href="/" className="mb-8 flex w-full items-center justify-center">
           <Image
