@@ -50,3 +50,7 @@ body {
 .max-w-full {
   max-width: 100%;
 }
+
+.leaderboard-winner-bg-gradient {
+  background: linear-gradient(180deg, #061b1c 0%, #030a0a 100%);
+}
